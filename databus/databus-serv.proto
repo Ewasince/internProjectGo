@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "/databus";
+
+service DatabusService {
+  //!< Sends data to the bus.
+  rpc send (SendRequest) returns (SendResponse);
+}
+
+message SendRequest {
+  //!< Keeps a value1.
+  float prm1 = 1;
+  //!< Keeps a value2.
+  float prm2 = 2;
+}
+
+message SendResponse {
+  //!< Keeps a result of request.
+  float result = 1;
+}
